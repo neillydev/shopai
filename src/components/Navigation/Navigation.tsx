@@ -5,8 +5,11 @@ import styles from './Navigation.module.css';
 const Navigation = () => {
     return (
         <section className={`${styles.navSection}`}>
-            <div className={`${styles.navWrapper} flex space-between`}>
-                <ul className={`${styles.navListLeft} flex`}>
+            <div className={`${styles.navWrapper} flex justify-between items-center`}>
+                <ul className={`${styles.navListLeft} flex items-center justify-content`}>
+                    <li className={`${styles.navItem} ${styles.droppyItem}`}>
+                        <h2 className={`${styles.droppy}`}>Droppy AI</h2>
+                    </li>
                     <li className={`${styles.navItem}`}>
                         <h3>Watch Demo</h3>
                     </li>
@@ -18,7 +21,7 @@ const Navigation = () => {
                     </li>
                 </ul>
                 <ul className={`${styles.navListRight}`}>
-                    <button className={`${styles.getStartedBtn}`}></button>
+                    <button className={`${styles.getStartedBtn}`}>Get Started</button>
                 </ul>
             </div>
         </section>

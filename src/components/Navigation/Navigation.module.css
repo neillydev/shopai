@@ -1,21 +1,21 @@
 .navSection {
-    
+    width: 100vw;
 }
 
 .navWrapper {
-    max-width: 1296px;
-    padding: 22px 0;
-    margin: 0 auto;
+    padding: 28px 64px;
+    width: 100%;
 }
 
-.navWrapper::before {
-    background: radial-gradient(62.87% 100% at 50% 100%,rgba(255,255,255,.12) 0%,rgba(255,255,255,0) 100%);
-    bottom: 0;
-    content: "";
-    height: 1px;
-    left: 0;
-    position: absolute;
-    width: 100%;
+.droppyItem {
+    margin-right: 92px !important;
+}
+
+.droppy {
+    color: #fff;
+    font-weight: 800;
+    font-size: 32px;
+    text-shadow: none;
 }
 
 .navListLeft {
@@ -41,11 +41,11 @@
     color: #ffffffca;
 }
 
-
 .navItem:active {
     color: rgba(255, 255, 255, 0.645)
 }
 
 .getStartedBtn {
-
+    color: #fff;
+    font-weight: 700;
 }
