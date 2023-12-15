@@ -1,0 +1,51 @@
+.navSection {
+    
+}
+
+.navWrapper {
+    max-width: 1296px;
+    padding: 22px 0;
+    margin: 0 auto;
+}
+
+.navWrapper::before {
+    background: radial-gradient(62.87% 100% at 50% 100%,rgba(255,255,255,.12) 0%,rgba(255,255,255,0) 100%);
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.navListLeft {
+
+}
+
+.navListRight {
+
+}
+
+.navItem {
+    color: #fff;
+    margin-right: 56px;
+    font-weight: 600;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                0 0 20px rgba(255, 255, 255, 0.5),
+                0 0 30px rgba(255, 255, 255, 0.3),
+                0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.navItem:hover {
+    color: #ffffffca;
+}
+
+
+.navItem:active {
+    color: rgba(255, 255, 255, 0.645)
+}
+
+.getStartedBtn {
+
+}
