@@ -1,9 +1,15 @@
 .heroSection {
-
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .heroLeft {
-    padding: 10rem 0;
+    width: 100%;
+    height: 100%;
+}
+
+.heroLeftWrapper {
     max-width: 500px;
 }
 
@@ -20,9 +26,48 @@
 }
 
 .heroRight {
-    
+    height: 100%;
+    width: 100%;
 }
 
 .special {
     color: #50C878;
+}
+
+.getStartedBtn {
+    margin-top: 32px;
+    color: #fff;
+    font-weight: 700;
+    background-color: #50C878;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.getStartedBtn:active {
+    color: rgba(255, 255, 255, 0.833);
+    background-color: #50c878d8;
+}
+
+.watchDemoBtn {
+    margin-top: 32px;
+    color: #fff;
+    font-weight: 700;
+    background-color: transparent;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.watchDemoBtn:hover {
+    color: #ffffffca;
+}
+
+.watchDemoBtn:active {
+    color: rgba(255, 255, 255, 0.645);
+}
+
+.lottieAnimationPlaceholder {
+    background-color: #50C878;
+    width: 750px;
+    height: 500px;
+    border-radius: 8px;
 }
