@@ -1,0 +1,28 @@
+.heroSection {
+
+}
+
+.heroLeft {
+    padding: 10rem 0;
+    max-width: 500px;
+}
+
+.heroHeader {
+    color: #fff;
+    font-size: 56px;
+    font-weight: 800;
+}
+
+.heroSubHeader {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, .7);
+    font-size: 16px;
+}
+
+.heroRight {
+    
+}
+
+.special {
+    color: #50C878;
+}
