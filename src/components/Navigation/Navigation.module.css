@@ -51,6 +51,11 @@
     color: rgba(255, 255, 255, 0.645);
 }
 
+.getStartedBtn:hover {
+    color: rgba(255, 255, 255, 0.833);
+    background-color: #50c878ea;
+}
+
 .getStartedBtn:active {
     color: rgba(255, 255, 255, 0.833);
     background-color: #50c878d8;
