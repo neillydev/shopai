@@ -3,12 +3,13 @@
 }
 
 .navWrapper {
-    padding: 28px 64px;
+    padding: 32px 128px;
     width: 100%;
 }
 
 .droppyItem {
-    margin-right: 92px !important;
+    margin-right: 64px !important;
+    cursor: default !important;
 }
 
 .droppy {
@@ -16,6 +17,10 @@
     font-weight: 800;
     font-size: 32px;
     text-shadow: none;
+}
+
+.special {
+    color: #50C878;
 }
 
 .navListLeft {
@@ -37,15 +42,29 @@
                 0 0 40px rgba(255, 255, 255, 0.1);
 }
 
-.navItem:hover {
+.navItem:hover, .navBtn:active {
     color: #ffffffca;
 }
 
-.navItem:active {
-    color: rgba(255, 255, 255, 0.645)
+.navItem:active, .navBtn:active {
+    color: rgba(255, 255, 255, 0.645);
+}
+
+.getStartedBtn:active {
+    color: rgba(255, 255, 255, 0.833);
+    background-color: #50c878d8;
+}
+
+.loginBtn {
+    color: #fff;
+    font-weight: 700;
+    margin-right: 26px;
 }
 
 .getStartedBtn {
     color: #fff;
     font-weight: 700;
+    background-color: #50C878;
+    padding: 8px 14px;
+    border-radius: 8px;
 }

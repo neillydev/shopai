@@ -7,8 +7,8 @@ const Navigation = () => {
         <section className={`${styles.navSection}`}>
             <div className={`${styles.navWrapper} flex justify-between items-center`}>
                 <ul className={`${styles.navListLeft} flex items-center justify-content`}>
-                    <li className={`${styles.navItem} ${styles.droppyItem}`}>
-                        <h2 className={`${styles.droppy}`}>Droppy AI</h2>
+                    <li className={`${styles.droppyItem} ${styles.navItem}`}>
+                        <h2 className={`${styles.droppy}`}>Droppy <span className={`${styles.special}`}>Ai</span></h2>
                     </li>
                     <li className={`${styles.navItem}`}>
                         <h3>Watch Demo</h3>
@@ -21,7 +21,8 @@ const Navigation = () => {
                     </li>
                 </ul>
                 <ul className={`${styles.navListRight}`}>
-                    <button className={`${styles.getStartedBtn}`}>Get Started</button>
+                    <button className={`${styles.navBtn} ${styles.loginBtn}`}>Login</button>
+                    <button className={`${styles.navBtn} ${styles.getStartedBtn}`}>Get Started</button>
                 </ul>
             </div>
         </section>
