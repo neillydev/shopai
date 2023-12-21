@@ -122,7 +122,7 @@ export const AuthForm = () => {
                                 </span>
                                 <div className={`${styles.easyAuthWrapper} w-1/2 flex mt-4`}>
                                     <button className={`${styles.googleAuth} ${styles.authModule} ${styles.authBtn} w-full mt-4 items-center justify-center`}>
-                                        {/* <GoogleSVG className='inline' /> */}
+                                        <GoogleSVG className='inline' />
                                     </button>
                                 </div>
                                 <span className={`${styles.authSubheader} relative mt-8 text-center`}>
