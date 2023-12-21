@@ -21,8 +21,8 @@ const Navigation = () => {
                     </li>
                 </ul>
                 <ul className={`${styles.navListRight}`}>
-                    <button className={`${styles.navBtn} ${styles.loginBtn}`}>Login</button>
-                    <button className={`${styles.navBtn} ${styles.getStartedBtn}`}>Get Started</button>
+                    <a href="/auth" className={`${styles.navBtn} ${styles.loginBtn}`}>Login</a>
+                    <a href="/auth" className={`${styles.navBtn} ${styles.getStartedBtn}`}>Get Started</a>
                 </ul>
             </div>
         </section>
