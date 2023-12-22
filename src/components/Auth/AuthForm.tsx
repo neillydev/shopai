@@ -116,6 +116,7 @@ export const AuthForm = () => {
                     :
                     <div className={`${styles.authContainer} fixed inset-0 text-white h-full overflow-y-auto`}>
                         <div className={styles.outerContainer}>
+                            <a href="/" className={`${styles.droppy}`}>Droppy<span className={`${styles.special}`}>Ai</span></a>
                             <div className={`${styles.authWrapper} flex flex-col items-center`}>
                                 <span className={`${styles.authHeader} text-center`}>
                                     Sign in with

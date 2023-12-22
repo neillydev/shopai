@@ -9,7 +9,7 @@ const Hero = () => {
         <div className={`${styles.heroLeftWrapper}`}>
           <h1 className={`${styles.heroHeader}`}>With Droppy, every product is a <span className={`${styles.special}`}>winning</span> product<span className={`${styles.special}`}>.</span></h1>
           <h2 className={`${styles.heroSubHeader}`}>Our unique AI solution streamlines the process of testing products and creatives, enabling you to devote more energy to growing your business rather than getting bogged down in the details of testing.</h2>
-          <button className={`${styles.getStartedBtn}`}>Get Started</button>
+          <a href="/auth" className={`${styles.getStartedBtn}`}>Get Started</a>
           <button className={`${styles.watchDemoBtn}`}>Watch Demo</button>
         </div>
       </div>
