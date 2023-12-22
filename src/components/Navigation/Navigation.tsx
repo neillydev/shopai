@@ -17,7 +17,9 @@ const Navigation = () => {
                         <h3>How It Works</h3>
                     </li>
                     <li className={`${styles.navItem}`}>
-                        <h3>Dashboard</h3>
+                        <a href="/dashboard">
+                            <h3>Dashboard</h3>
+                        </a>
                     </li>
                 </ul>
                 <ul className={`${styles.navListRight}`}>
