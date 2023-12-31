@@ -31,6 +31,7 @@ const Main = () => {
   const [currentGeneration, setCurrentGeneration] = useState<Generation | null>(null);
   const [generations, setGenerations] = useState<Generation[]>([]);
   const [togglePrevGenerations, setTogglePrevGenerations] = useState(false);
+  const [expand, setExpand] = useState(-1);
 
   /* Token State */
   const [developerMode, setDeveloperMode] = useState(false);
@@ -155,9 +156,9 @@ const Main = () => {
                   </div>
                 </div>
                 {!togglePrevGenerations || <div className={`${styles.prevGenWrapper}`}>
-                  <Generation />
-                  <Generation />
-                  <Generation />
+                  <Generation id={0} expand={expand} setExpand={setExpand} />
+                  <Generation id={1} expand={expand} setExpand={setExpand} />
+                  <Generation id={2} expand={expand} setExpand={setExpand} />
                 </div>}
               </div>
             </div>
