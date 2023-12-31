@@ -1,5 +1,3 @@
-
-
 .genWrapper {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px, rgba(27, 31, 35, 0.15) 0px 1px 1px -1px;
 }
@@ -58,7 +56,7 @@
     justify-content: space-between;
 }
 
-.cost > h3 {
+.cost>h3 {
     font-size: 16px;
     font-weight: 500;
 }
@@ -69,7 +67,7 @@
     color: #000;
 }
 
-.costDetails > svg {
+.costDetails>svg {
     /* padding: 2px;
     border-radius: 4px;
     background-color: #d2d2d2;
@@ -78,7 +76,49 @@
     margin-right: 4px;
 }
 
-.tuning {
+.tuning,
+.productDesc,
+.output {
     font-size: 16px;
     font-weight: 500;
+}
+
+.productDesc > h4 {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.tuningDetails {
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
+}
+
+.tuningDetails>svg {
+    padding: 2px;
+    border-radius: 4px;
+    background-color: #50C878;
+    width: fit-content;
+    stroke: #fff;
+    margin-right: 4px;
+}
+
+.readOnly {
+    border-style: dotted;
+    cursor: not-allowed;
+    color: #000;
+    outline: none;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 100%;
+    resize: none;
+    padding: 4px;
+    font-size: 12px;
+}
+
+.readOnlyOutput {
+
+    background-color: #343541;
+    color: #fff;
+    padding: 10px;
 }
