@@ -1,0 +1,84 @@
+
+
+.genWrapper {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px, rgba(27, 31, 35, 0.15) 0px 1px 1px -1px;
+}
+
+.genHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+.genHeaderWrapper {
+    align-items: center;
+    padding: 4px 10px;
+}
+
+.genHeaderWrapper>svg {
+    stroke: #fff;
+
+    padding: 2px;
+    border-radius: 4px;
+    background-color: #d2d2d2;
+    width: fit-content;
+}
+
+.genHeaderText {
+    padding: 0 8px;
+}
+
+.genHeaderText>h3 {
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.detailsBtn {
+    padding: 4px 10px;
+}
+
+.detailsBtn>svg {
+    stroke: #000;
+}
+
+.genBody {
+    flex-wrap: wrap;
+    padding: 16px 22px;
+}
+
+.genExpand {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 18px 20px -10px, rgba(0, 0, 0, 0.06) 0px 1px 0px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cost > h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.costDetails {
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
+}
+
+.costDetails > svg {
+    /* padding: 2px;
+    border-radius: 4px;
+    background-color: #d2d2d2;
+    width: fit-content; */
+    stroke: #50C878;
+    margin-right: 4px;
+}
+
+.tuning {
+    font-size: 16px;
+    font-weight: 500;
+}
