@@ -1,0 +1,109 @@
+.startContainer {
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 50px;
+
+}
+
+.startHeaderContainer {
+
+}
+
+.startHeader {
+    color: rgba(48, 49, 64, 1);
+    font-weight: 700;
+    font-size: 48px;
+    align-items: center;
+    padding: 20px 0 0px 0;
+}
+
+.startSubheader {
+    color: rgba(48,49,64,.7);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.startBody {
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 32px 0;
+}
+
+.planWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    padding: 20px 30px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.planHeader {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.planSubheader {
+    color: rgba(48,49,64,.7);
+    font-size: 15px;
+    font-weight: 400;
+    
+}
+
+.planPrice {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.term {
+    font-size: 16px;
+}
+
+.planPurchase {
+    width: 100%;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #50C878;
+    padding: 4px 14px;
+    border-radius: 4px;
+}
+
+.planPurchase:hover {
+    background-color: #48b86d;
+}
+
+.planPurchase:active {
+    background-color: rgb(59, 158, 92);
+}
+
+.features {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.feature {
+    margin-top: 4px;
+    background-color: rgb(246, 246, 252);
+    display: flex;
+    padding: 10px;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+.featureNth {
+    background-color: #fff;
+}
+
+.tokenWrapper {
+    display: flex;
+}
+
+.tokenWrapper > svg {
+    stroke: #50C878;
+}
