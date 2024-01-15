@@ -6,6 +6,7 @@ import Generate from '@/../public/generate.svg';
 import Rocket from '@/../public/rocket.svg';
 import Tokens from '@/../public/tokens.svg';
 import InfinitySVG from '@/../public/infinity.svg';
+import Gear from '@/../public/gear.svg';
 
 import styles from './Main.module.css';
 import Spinner from '../Spinner/Spinner';
@@ -47,7 +48,19 @@ const Main = () => {
       <div className={`${styles.mainContainer}`}>
         <div className={`${styles.mainWrapper}`}>
           <div className={`${styles.sidePanel}`}>
-            <a href="/" onClick={(e) => e.stopPropagation()} className={`${styles.droppy}`}>Droppy<span className={`${styles.special}`}>Ai</span></a>
+            <div className={`${styles.navWrapper}`}>
+              <a href="/" onClick={(e) => e.stopPropagation()} className={`${styles.droppy}`}>Droppy<span className={`${styles.special}`}>Ai</span></a>
+              <ul className={`${styles.navList}`}>
+                <li className={`${styles.navItem} ${styles.navItemSelected}`}>
+                  <Generate />
+                  Generator
+                </li>
+                <li className={`${styles.navItem} ${styles.navItemUnselected}`}>
+                  <Gear />
+                  Settings
+                </li>
+              </ul>
+            </div>
 
             <div className={`${styles.profileModule}`}>
               <div className={`${styles.profileModuleHeader} flex`}>

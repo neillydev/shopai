@@ -5,6 +5,60 @@
 
 .navPanel {}
 
+.navWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navList {
+    margin-top: 16px;
+    width: 100%;
+    padding: 0 16px;
+}
+
+.navItem {
+    margin-top: 2px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+} 
+
+.navItemUnselected:hover {
+    background-color: #272727;
+}
+
+.navItemUnselected:active {
+    background-color: #191919;
+}
+
+.navItem > svg {
+    stroke: #fff;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.navItemUnselected {
+    cursor: pointer;
+}
+
+.navItemSelected {
+    color: #50C878;
+    background-color: #303030;
+}
+
+.navItemSelected > svg {
+    stroke: #50C878;
+}
+
 .sidePanel {
     display: flex;
     flex-direction: column;
