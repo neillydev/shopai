@@ -1,19 +1,17 @@
 import { getServerSession } from 'next-auth/next';
 import { redirect } from 'next/navigation';
 import { options } from '../api/auth/[...nextauth]/options';
+import StartComponent from '@/components/StartComponent/StartComponent';
 
-import styles from './Dashboard.module.css';
-import Main from '@/components/Dashboard/Main';
-
-export default async function Dashboard() {
+export default async function Start() {
   const session = await getServerSession(options);
   if (session) { //if (!session) {
-    redirect('/auth?callbackUrl=/dashboard');
+    redirect('/dashboard');
   }
 
   return (
-    <div className={`${styles.dashContainer} flex`}>
-      <Main />
+    <div className={`flex`}>
+        <StartComponent />
     </div>
   )
 };
