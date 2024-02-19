@@ -1,6 +1,8 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Loading from '../Loading/Loading';
+import NotificationContext from '../../contexts/NotificationContext';
+import { NotificationContextType } from '../../contexts/NotificationContext';
 
 import Generate from '@/../public/generate.svg';
 import Rocket from '@/../public/rocket.svg';
@@ -21,9 +23,19 @@ type Generation = {
   output: string;
 };
 
+enum ErrorType {
+  INVALID_EMAIL = "Please enter a valid email",
+  EMPTY_INPUT = "",
+  NETWORK_ERROR = "Network error, please contact the administrators.",
+}
+
 const Main = () => {
   const [loading, setLoading] = useState(true);
   const [dashboardLoading, setDashboardLoading] = useState(true);
+  
+  /* Notification Context */
+  const notificationCtx = useContext<NotificationContextType>(NotificationContext);
+  const component_not_found = "This feature is currently under development.";
 
   /* Product Generation State */
   const [productDesc, setProductDesc] = useState('');
@@ -37,6 +49,10 @@ const Main = () => {
   /* Token State */
   const [developerMode, setDeveloperMode] = useState(false);
   const [tokens, setTokens] = useState(1000);
+
+  const handleError = (error: string) => {
+    notificationCtx.error(error);
+  };
 
   useEffect(() => {
     setTimeout(() => setLoading(false), loaderDuration + 750);
@@ -55,7 +71,7 @@ const Main = () => {
                   <Generate />
                   Generator
                 </li>
-                <li className={`${styles.navItem} ${styles.navItemUnselected}`}>
+                <li className={`${styles.navItem} ${styles.navItemUnselected}`} onClick={() => handleError(component_not_found)}>
                   <Gear />
                   Settings
                 </li>
