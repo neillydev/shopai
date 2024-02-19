@@ -1,14 +1,25 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './StartComponent.module.css';
 
 import Check from '@/../public/check.svg';
 import X from '@/../public/circle-x.svg';
 import Tokens from '@/../public/tokens.svg';
+import Loading from '../Loading/Loading';
+
+const loaderDuration = 750;
 
 const StartComponent = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), loaderDuration + 750);
+  }, []);
+
   return (
+    loading ?
+      <Loading duration={750} /> :
     <div className={`${styles.startContainer} flex flex-col`}>
       <div className={`${styles.startHeaderContainer}`}>
         <div className={`${styles.startHeader}`}>Get Started.</div>
@@ -81,6 +92,7 @@ const StartComponent = () => {
         </div> */}
       </div>
     </div>
+      
   )
 }
 
