@@ -7,6 +7,7 @@ import Check from '@/../public/check.svg';
 import X from '@/../public/circle-x.svg';
 import Tokens from '@/../public/tokens.svg';
 import Loading from '../Loading/Loading';
+import BackBtn from '../BackBtn/BackBtn';
 
 const loaderDuration = 750;
 
@@ -21,6 +22,7 @@ const StartComponent = () => {
     loading ?
       <Loading duration={750} /> :
     <div className={`${styles.startContainer} flex flex-col`}>
+      <BackBtn size={24} />
       <div className={`${styles.startHeaderContainer}`}>
         <div className={`${styles.startHeader}`}>Get Started.</div>
         <div className={`${styles.startSubheader}`}>Choose a plan to start using Droppy</div>

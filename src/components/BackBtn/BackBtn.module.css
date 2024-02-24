@@ -1,0 +1,11 @@
+.backBtn:hover {
+    opacity: .5;
+}
+
+.backBtn:active {
+    opacity: .35;
+}
+
+.backBtn {
+    opacity: 1;
+}
