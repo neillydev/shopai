@@ -1,5 +1,7 @@
 "use client";
 import React, { useContext, useEffect, useState } from 'react';
+import { getSession, signOut, useSession } from 'next-auth/react';
+
 import Loading from '../Loading/Loading';
 import NotificationContext from '../../contexts/NotificationContext';
 import { NotificationContextType } from '../../contexts/NotificationContext';
@@ -14,7 +16,7 @@ import styles from './Main.module.css';
 import Spinner from '../Spinner/Spinner';
 import Generation from '../Generation/Generation';
 
-const loaderDuration = 120;
+const loaderDuration = 1000;
 
 type Generation = {
   timestamp: string;
@@ -32,7 +34,7 @@ enum ErrorType {
 const Main = () => {
   const [loading, setLoading] = useState(true);
   const [dashboardLoading, setDashboardLoading] = useState(true);
-  
+
   /* Notification Context */
   const notificationCtx = useContext<NotificationContextType>(NotificationContext);
   const component_not_found = "This feature is currently under development.";
@@ -52,6 +54,11 @@ const Main = () => {
 
   const handleError = (error: string) => {
     notificationCtx.error(error);
+  };
+
+  const handleSignOut = async () => {
+    await signOut({ redirect: false });
+    window.location.href = '/auth';
   };
 
   useEffect(() => {
@@ -92,7 +99,7 @@ const Main = () => {
                   </div>
                 </div>
               </div>
-              <button className={`${styles.logoutBtn} ${styles.btnModule} py-2 whitespace-nowrap my-2 w-full`} onClick={() => { }}>
+              <button className={`${styles.logoutBtn} ${styles.btnModule} py-2 whitespace-nowrap my-2 w-full`} onClick={handleSignOut}>
                 Log Out
                 <div className={`${styles.btnModuleBorder}`} />
               </button>
@@ -195,6 +202,6 @@ const Main = () => {
         </div>
       </div >
   )
-}
+};
 
 export default Main;

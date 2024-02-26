@@ -7,7 +7,7 @@ import Main from '@/components/Dashboard/Main';
 
 export default async function Dashboard() {
   const session = await getServerSession(options);
-  if (session) { //if (!session) {
+  if (!session) { //if (!session) {
     redirect('/auth?callbackUrl=/dashboard');
   }
 

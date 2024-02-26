@@ -3,8 +3,6 @@
     height: 100vh;
 }
 
-.navPanel {}
-
 .navWrapper {
     display: flex;
     width: 100%;
@@ -283,10 +281,6 @@
     line-height: 20px;
 }
 
-.genHeader {
-    
-}
-
 .genEmpty {
     padding: 24px 0;
 }
@@ -492,7 +486,7 @@
     opacity: 0.75;
 }
 
-.btnModule::before, .btnModule::after {
+.btnModule::before {
     content: "";
     display: block;
     transition: .2s opacity cubic-bezier(.6,.6,0,1);
@@ -506,10 +500,21 @@
 }
 
 .btnModule::after {
+    content: "";
+    display: block;
+    transition: .2s opacity cubic-bezier(.6,.6,0,1);
+    border-radius: inherit;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
     background: rgba(81, 200, 120, .24);
     box-shadow: inset 0 0 12px #bf97ff70;
     opacity: 0;
 }
+
 .btnModule::before {
     background: rgba(81, 200, 121, 1);
     box-shadow: inset 0 0 12px #bf97ff3d;
