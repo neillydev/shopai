@@ -5,11 +5,13 @@ import styles from './BackBtn.module.css';
 
 interface BackBtnProps {
     size: number; // Size of the SVG icon
+    color?: string;
+    redirect?: string;
 }
 
-const BackBtn: React.FC<BackBtnProps> = ({ size }) => {
+const BackBtn: React.FC<BackBtnProps> = ({ size, color, redirect }) => {
     return (
-        <Link href="/" passHref>
+        <Link href={ redirect || "/" } passHref>
         <button
             style={{
                 position: 'absolute',
@@ -30,7 +32,7 @@ const BackBtn: React.FC<BackBtnProps> = ({ size }) => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" style={ color ? {stroke:color} : {}} className="icon icon-tabler icon-tabler-arrow-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M5 12l14 0" />
                     <path d="M5 12l6 6" />
