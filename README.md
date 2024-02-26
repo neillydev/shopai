@@ -1,3 +1,3 @@
 <h1 align="center">
-  ShopAI
+  DroppyAI
 </h1>
