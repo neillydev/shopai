@@ -52,6 +52,7 @@
 .authInput {
     background-color: #111216;
     border-color: rgba(30, 73, 45, 0.48);
+    margin: 16px 0;
 }
 
 .authBtn {
