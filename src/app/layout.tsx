@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers';
 import { Inter } from 'next/font/google'
 import NextAuthProvider from '@/contexts/NextAuthProvider'
 import { NotificationProvider } from '../contexts/NotificationContext'
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
@@ -28,4 +29,3 @@ export default function RootLayout({
     </NextAuthProvider>
   )
 }
-  
