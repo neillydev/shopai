@@ -3,20 +3,26 @@
     height: 100vh;
 }
 
-.navWrapper {
+.navWrap {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
 }
 
-.navList {
-    margin-top: 16px;
+.navWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navList, .atsBtnWrapper {
+    /* margin-top: 16px; */
     width: 100%;
     padding: 0 16px;
 }
 
-.navItem {
+.navItem, .atsBtn {
     margin-top: 2px;
     color: #fff;
     font-size: 15px;
@@ -29,15 +35,15 @@
     border-radius: 4px;
 } 
 
-.navItemUnselected:hover {
+.navItemUnselected:hover, .atsBtn:hover {
     background-color: #272727;
 }
 
-.navItemUnselected:active {
+.navItemUnselected:active, .atsBtn:active {
     background-color: #191919;
 }
 
-.navItem > svg {
+.navItem > svg, .atsBtn > svg {
     stroke: #fff;
     width: 16px;
     height: 16px;
@@ -539,4 +545,66 @@
     padding: 1px;
     pointer-events: none;
     position: absolute;
+}
+
+.atsBtnGlow {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.atsBtnGlow:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff00ea, #ff0080, rgb(255, 0, 93));
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.atsBtnGlow:active {
+    color: #000
+}
+
+.atsBtnGlow:active:after {
+    background: transparent;
+}
+
+.atsBtnGlow:hover:before {
+    opacity: 1;
+}
+
+.atsBtnGlow:hover {
+    background: #272727;
+}
+
+.atsBtnGlow:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    left: 0;
+    top: 0;
+    border-radius: 6px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }

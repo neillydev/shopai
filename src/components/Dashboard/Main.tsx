@@ -11,10 +11,13 @@ import Rocket from '@/../public/rocket.svg';
 import Tokens from '@/../public/tokens.svg';
 import InfinitySVG from '@/../public/infinity.svg';
 import Gear from '@/../public/gear.svg';
+import TikTok from '@/../public/tiktok.svg';
 
 import styles from './Main.module.css';
 import Spinner from '../Spinner/Spinner';
 import Generation from '../Generation/Generation';
+import { redirect } from 'next/navigation';
+import Link from 'next/link';
 
 const loaderDuration = 1000;
 
@@ -31,7 +34,20 @@ enum ErrorType {
   NETWORK_ERROR = "Network error, please contact the administrators.",
 }
 
+type ATS_ADMIN = {
+  email: string;
+}
+
 const Main = () => {
+  const ATS_ADMINS = [
+    {
+      email: "neillydev@gmail.com",
+    }
+  ];
+
+  const [isATSAdmin, setIsATSAdmin] = useState(false);
+  const [email, setEmail] = useState<string | null>(null);
+
   const [loading, setLoading] = useState(true);
   const [dashboardLoading, setDashboardLoading] = useState(true);
 
@@ -52,6 +68,10 @@ const Main = () => {
   const [developerMode, setDeveloperMode] = useState(false);
   const [tokens, setTokens] = useState(1000);
 
+  const searchATSAdmins = (str: string) => {
+    return ATS_ADMINS.find(user => user.email === str);
+  };
+
   const handleError = (error: string) => {
     notificationCtx.error(error);
   };
@@ -62,8 +82,16 @@ const Main = () => {
   };
 
   useEffect(() => {
+
+    if (typeof window !== "undefined") {
+      setEmail(localStorage.getItem("email"));
+    }
+    if (email && searchATSAdmins(email)) {
+
+      setIsATSAdmin(true);
+    }
     setTimeout(() => setLoading(false), loaderDuration + 750);
-  }, []);
+  }, [email]);
 
   return (
     loading ?
@@ -72,17 +100,25 @@ const Main = () => {
         <div className={`${styles.mainWrapper}`}>
           <div className={`${styles.sidePanel}`}>
             <div className={`${styles.navWrapper}`}>
-              <a href="/" onClick={(e) => e.stopPropagation()} className={`${styles.droppy}`}>Droppy<span className={`${styles.special}`}>Ai</span></a>
-              <ul className={`${styles.navList}`}>
-                <li className={`${styles.navItem} ${styles.navItemSelected}`}>
-                  <Generate />
-                  Generator
-                </li>
-                <li className={`${styles.navItem} ${styles.navItemUnselected}`} onClick={() => handleError(component_not_found)}>
-                  <Gear />
-                  Settings
-                </li>
-              </ul>
+              <div className={`${styles.navWrap}`}>
+                <a href="/" onClick={(e) => e.stopPropagation()} className={`${styles.droppy}`}>Droppy<span className={`${styles.special}`}>Ai</span></a>
+                <ul className={`${styles.navList}`}>
+                  <li className={`${styles.navItem} ${styles.navItemSelected}`}>
+                    <Generate />
+                    Generator
+                  </li>
+                  <li className={`${styles.navItem} ${styles.navItemUnselected}`} onClick={() => handleError(component_not_found)}>
+                    <Gear />
+                    Settings
+                  </li>
+                </ul>
+              </div>
+              <Link className={`${styles.atsBtnWrapper}`} hidden={!isATSAdmin} href="/ats">
+                <button className={`${styles.atsBtn} ${styles.atsBtnGlow}`}>
+                  <TikTok />
+                  Automated TikTok Shop
+                </button>
+              </Link>
             </div>
 
             <div className={`${styles.profileModule}`}>
