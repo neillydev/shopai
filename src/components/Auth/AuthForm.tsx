@@ -4,6 +4,7 @@ import { signIn } from 'next-auth/react';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import Loading from '@/components/Loading/Loading';
 import { baseURL } from '@/app/api/config';
+import { set } from '@/app/actions/cookies';
 
 import GoogleSVG from '@/../public/google.svg';
 
@@ -38,6 +39,10 @@ const AuthPage = {
 };
 
 const loaderDuration = 700;
+
+const setRegistrationSuccessCookie = async () => {
+    set('registrationSuccess', 'true');
+};
 
 export const AuthForm = () => {
 
@@ -123,16 +128,17 @@ export const AuthForm = () => {
                 }
 
                 notificationCtx.error(ErrorType.NETWORK_ERROR);
-                throw new Error(ErrorType.NETWORK_ERROR);
+
             }
 
             if (response.status === 200) {
-                const data = await response.json();
-                console.log(data)
-                router.push('/confirm');
+                const { token } = await response.json();
+                console.log(token)
+                setRegistrationSuccessCookie();
+                router.push(`/confirm`);
             } else {
                 notificationCtx.error(ErrorType.NETWORK_ERROR);
-                throw new Error(ErrorType.NETWORK_ERROR);
+
             }
         } catch (error) {
             notificationCtx.error(ErrorType.NETWORK_ERROR);
@@ -172,6 +178,9 @@ export const AuthForm = () => {
                 notificationCtx.error(result.error);
             } else {
                 console.log('Login successful', result);
+                if (typeof window !== "undefined") {
+                    localStorage.setItem("email", email)
+                }
                 router.push('/dashboard');
             }
         } catch (error) {
@@ -222,7 +231,7 @@ export const AuthForm = () => {
                     default:
                 }
                 notificationCtx.error(ErrorType.NETWORK_ERROR);
-                throw new Error(ErrorType.NETWORK_ERROR);
+
             }
 
             if (response.status === 200) {
@@ -230,7 +239,7 @@ export const AuthForm = () => {
                 setAuthStateKey('login');
             } else {
                 notificationCtx.error(ErrorType.NETWORK_ERROR);
-                throw new Error(ErrorType.NETWORK_ERROR);
+
             }
         } catch (error) {
             notificationCtx.error(ErrorType.NETWORK_ERROR);
